@@ -3,43 +3,80 @@
     padding: 0;
     box-sizing: border-box;
 }
+.container{
+    width: 100%;
+    min-height: 100vh;
+    border: 3px solid green;
+    position: relative;
+}
 .watch-container{
     height: 45vw;
     width: 45vw;
-    margin: 5px auto;
-    background-image: url("/image/watch.png") ;
-    background-repeat: no-repeat;
-    background-size: 100%;
+    overflow: hidden;
     position: relative;
+    box-shadow: 1px 1px 10px grey;
+    padding: 10px;
+}
+.watch-container>img{
+    width: inherit;
+    height: inherit;
+    z-index: -2;
+}
+.center{
+    
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: black;
+    
 }
 .watch-container #hour,#minute,#second{
     background-color: black;
     transform-origin: bottom;
 }
-#hour{
+.watch-container,.watch-container>img,.center{
     position: absolute;
-    left: 339px;
-    top: 183px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+#hour,#minute,#second{
+    position: absolute;
+    left: 49.65%;
+}
+#hour{
+    height: 25%;
     width: 10px;
-    height: 164px;
-
+    top: 25%;
+    border-radius: 10px;
+    background-color: black;
 
 }
 #minute{
-    position: absolute;
-    left: 339px;
-    top: 148px;
+    height: 28%;
     width: 8px;
-    height: 198px;
-
-
+    top: 22%;
+    border-radius: 10px;
+    background-color: black;
 }
 #second{
-    position: absolute;
-    left: 341px;
-    top: 120px;
-    width: 4px;
-    height: 226px;
+    height: 35%;
+    width: 6px;
+    top: 15%;
+    border-radius: 10px;
+    background-color: black;
 
+}
 
+@media screen and (max-width:1150px){
+    .watch-container{
+        width: 70vw;
+        height: 70vw;
+    }
+}
+@media screen and (max-width:545px){
+    .watch-container{
+        width: 90vw;
+        height: 90vw;
+    }
 }
